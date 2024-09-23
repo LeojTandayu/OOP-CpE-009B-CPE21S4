@@ -1,0 +1,74 @@
+class Employee:
+  def __init__(self, emp_id, emp_name, emp_address):        
+              self.emp_id = emp_id
+              self.emp_name = emp_name
+              self.emp_address = emp_address
+
+  def get_emp_id(self):
+              return self.emp_id
+
+  def get_emp_name(self):
+              return self.emp_name
+
+  def get_emp_address(self):
+              return self.emp_address
+
+
+class Fulltime(Employee):
+  def __init__(self, emp_id, emp_name, emp_address, allowance, rate):  
+      super().__init__(emp_id, emp_name, emp_address)
+      self.allowance = allowance
+      self.rate = rate
+
+  def calculate_allowance(self):
+      return self.allowance * self.rate
+
+class Parttime(Employee):
+  def __init__(self, emp_id, emp_name, emp_address, rate):              
+      super().__init__(emp_id, emp_name, emp_address)
+      self.rate = rate
+
+  def calculate_rate(self):
+      return self.rate
+
+class Salary:
+  def __init__(self, salary_id, salary, cut_off_date, days_of_work):
+      self.salary_id = salary_id
+      self.salary = salary
+      self.cut_off_date = cut_off_date
+      self.days_of_work = days_of_work
+
+  def calculate_salary(self):
+      return self.salary * self.days_of_work
+
+  def get_cut_off_date(self):
+      return self.cut_off_date
+
+  def get_days_of_work(self):
+      return self.days_of_work
+
+
+emp1 = Fulltime(2024202501, "Leoj", "Antipolo", 100, 30)
+emp2 = Parttime(2024202502, "Jeam", "Masinag", 300)
+
+
+salary1 = Salary(101, emp1.calculate_allowance(), "2024-09-23", 22)
+salary2 = Salary(102, emp2.calculate_rate(), "2024-09-23", 20)
+
+print("Employee 1 Details:")
+print("Employee ID:", emp1.get_emp_id())
+print("Name:", emp1.get_emp_name())
+print("Address:", emp1.get_emp_address())
+print("Allowance:" , emp1.calculate_allowance())
+print("Cutoff Date:", salary1.get_cut_off_date())
+print("Fulltime Salary:" , salary1.calculate_salary())
+print("-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-")
+print("Employee 2 Details:")
+print("Employee ID:", emp2.get_emp_id())
+print("Name:", emp2.get_emp_name())
+print("Address:", emp2.get_emp_address())
+print("Rate:" , emp2.calculate_rate())
+print("Cutoff Date:", salary2.get_cut_off_date())
+print("Parttime Salary:" , salary2.calculate_salary())
+
+
