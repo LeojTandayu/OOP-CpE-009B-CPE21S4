@@ -1,0 +1,5 @@
+First Name | Last Name | Username | Password | Email | Contact Number
+
+Leoj  | Tandayu | qljbtandayu | admin | admin@gmail.com | 12345678901
+Kenn  | Valleser | qkjlvalleser | admin1 | admin1@gmail.com | 12345678901
+
